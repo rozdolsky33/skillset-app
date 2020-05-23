@@ -10,7 +10,7 @@ export function initServer() {
     res.status(200).send("<h1>API is up and running!</h1>");
   });
 
-  app.route("/api/chekcout").post(bodyParser.json(), createCheckoutSession);
+  app.route("/api/checkout").post(bodyParser.json(), createCheckoutSession);
 
   const PORT = process.env.PORT || 9000;
   app.listen(PORT, () => {

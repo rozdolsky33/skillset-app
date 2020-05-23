@@ -48,8 +48,8 @@ export class CoursesCardListComponent implements OnInit {
     }
     this.purchaseStarted = true;
     this.checkout.startCourseCheckoutSession(course.id).subscribe(
-      () => {
-        console.log("Stripe chekcout session initialized...");
+      (session) => {
+        this.checkout.redirectToCheckout(session);
       },
       (err) => {
         console.log("Error creating checkout session", err);
